@@ -28,14 +28,16 @@ return require('packer').startup(function(use)
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
-    use "nvim-telescope/telescope-dap.nvim"
 
     use "nvim-lua/plenary.nvim"
-    use "tpope/vim-fugitive"
     use 'nvim-lualine/lualine.nvim'
     use "nvim-tree/nvim-web-devicons"
     use "akinsho/toggleterm.nvim"
     use "rafamadriz/friendly-snippets"
     use 'mfussenegger/nvim-dap'
     use "windwp/nvim-autopairs"
+
+    -- My forks
+    use "bandif/vim-fugitive"
+    use "bandif/nvim-dap-ui"
 end)

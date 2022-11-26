@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-ui",
+    url = "https://github.com/bandif/nvim-dap-ui"
+  },
   ["nvim-jdtls"] = {
     loaded = true,
     path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-jdtls",
@@ -159,11 +164,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["telescope-dap.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-dap.nvim",
-    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
-  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-file-browser.nvim",
@@ -187,7 +187,7 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
+    url = "https://github.com/bandif/vim-fugitive"
   }
 }
 
