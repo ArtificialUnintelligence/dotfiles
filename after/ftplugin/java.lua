@@ -2,6 +2,7 @@ local vnoremap = require("keymap").vnoremap
 local nnoremap = require("keymap").nnoremap
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local dap = require("dap")
+local dapui = require("dapui")
 
 dap.configurations.java = {
   {
@@ -27,10 +28,36 @@ dap.configurations.java = {
   }
 }
 
+dapui.setup({
+  icons = { expanded = "", collapsed = ""},
+  layouts = {
+    {
+        elements = {
+            { id = "scopes", size = 0.25 }
+        },
+        size = 40,
+        position = "left",
+    }
+  },
+})
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
 local workspace_dir = 'C:\\Users\\FeketeA\\nvim-workspace\\' .. project_name
 
 local on_attach = function(client,bufnr)
   require('jdtls').setup_dap()
+
   vnoremap("<leader>ev", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
   vnoremap("<leader>ec", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>")
   vnoremap("<leader>em", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
@@ -38,9 +65,15 @@ local on_attach = function(client,bufnr)
   nnoremap('<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
   nnoremap('<leader>gr', '<cmd>lua vim.lsp.buf.references() && vim.cmd("copen")<CR>')
   nnoremap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-  nnoremap('<leader>dt', "<cmd>lua local widgets=require'dap.ui.widgets';widgets.sidebar(widgets.scopes).toggle()<CR>")
-  nnoremap('<leader>b', "<cmd>lua require('dap').toggle_breakpoint()<CR>")
-  nnoremap('<Up>', "<cmd>lua require('dap').continue()<CR>")
+
+  -- Debugger remaps
+  nnoremap('<leader>dt', "<cmd>lua require('dapui').toggle()<CR>")
+  nnoremap('<leader>db', "<cmd>lua require('dap').toggle_breakpoint()<CR>")
+  nnoremap('<leader>dc', "<cmd>lua require('dap').continue()<CR>")
+  nnoremap('<leader>ds', "<cmd>lua require('dap').step_over()<CR>")
+  nnoremap('<leader>di', "<cmd>lua require('dap').step_into()<CR>")
+  nnoremap('<leader>do', "<cmd>lua require('dap').step_out()<CR>")
+  nnoremap('<leader>dd', "<cmd>lua require('dap').terminate()<CR>")
 end
 
 local bundles = {
