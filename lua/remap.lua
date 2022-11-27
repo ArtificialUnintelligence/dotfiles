@@ -31,11 +31,12 @@ nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files{ path_displa
 nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers{ path_display = { 'tail' } }<cr>")
 nnoremap("<leader>fe", "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>")
 nnoremap("<leader>lg", "<cmd>lua require('telescope.builtin').live_grep{ path_display = { 'tail' }, disable_coordinates = true }<cr>")
+nnoremap("<leader>th", "<cmd>:Telescope help_tags<cr>")
 
 nnoremap("<leader>gs", ":G<cr>")
-nnoremap("<leader>gc", ":G commit")
-nnoremap("<leader>gh", ":G push")
-nnoremap("<leader>gl", ":G pull")
+nnoremap("<leader>gc", ":G commit<cr>")
+nnoremap("<leader>gh", ":G push<cr>")
+nnoremap("<leader>gl", ":G pull<cr>")
 nnoremap("<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
 
 -- Luasnip
