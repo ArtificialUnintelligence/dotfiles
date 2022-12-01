@@ -3,6 +3,8 @@ local nnoremap = require("keymap").nnoremap
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local dap = require("dap")
 local dapui = require("dapui")
+local wk = require("which-key")
+
 
 dap.configurations.java = {
   {
@@ -69,11 +71,24 @@ local on_attach = function(client,bufnr)
   -- Debugger remaps
   nnoremap('<leader>dt', "<cmd>lua require('dapui').toggle()<CR>")
   nnoremap('<leader>db', "<cmd>lua require('dap').toggle_breakpoint()<CR>")
-  nnoremap('<leader>dc', "<cmd>lua require('dap').continue()<CR>")
-  nnoremap('<leader>ds', "<cmd>lua require('dap').step_over()<CR>")
-  nnoremap('<leader>di', "<cmd>lua require('dap').step_into()<CR>")
-  nnoremap('<leader>do', "<cmd>lua require('dap').step_out()<CR>")
+  nnoremap('<Up>', "<cmd>lua require('dap').continue()<CR>")
+  nnoremap('<Down>', "<cmd>lua require('dap').step_over()<CR>")
+  nnoremap('<Right>', "<cmd>lua require('dap').step_into()<CR>")
+  nnoremap('<Left>', "<cmd>lua require('dap').step_out()<CR>")
   nnoremap('<leader>dd', "<cmd>lua require('dap').terminate()<CR>")
+
+  wk.register({
+    ["<leader>ev"] = "extract variable",
+    ["<leader>ec"] = "extract constant",
+    ["<leader>em"] = "extract method",
+    ["<leader>gd"] = "go to definition",
+    ["<leader>gi"] = "go to implementation",
+    ["<leader>gr"] = "go to references",
+    ["<leader>rn"] = "rename",
+    ["<leader>dt"] = "debugger toggle",
+    ["<leader>db"] = "debugger breakpoint",
+    ["<leader>dd"] = "debugger deattach",
+  })
 end
 
 local bundles = {

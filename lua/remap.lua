@@ -16,28 +16,21 @@ inoremap("<C-v>", "<C-r><C-p>*")
 nnoremap("<leader>w", "<C-^>")
 nnoremap("Y", "y$")
 
--- java mappings
-vnoremap("<leader>ev", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
-vnoremap("<leader>ec", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>")
-vnoremap("<leader>em", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
-nnoremap('<leader>gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
-nnoremap('<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-nnoremap('<leader>gr', '<cmd>lua vim.lsp.buf.references() && vim.cmd("copen")<CR>')
-nnoremap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-
-
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files{ path_display = { 'tail' } }<cr>")
 nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers{ path_display = { 'tail' } }<cr>")
 nnoremap("<leader>fe", "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>")
 nnoremap("<leader>lg", "<cmd>lua require('telescope.builtin').live_grep{ path_display = { 'tail' }, disable_coordinates = true }<cr>")
-nnoremap("<leader>th", "<cmd>:Telescope help_tags<cr>")
+nnoremap("<leader>ht", "<cmd>:Telescope help_tags<cr>")
 
 nnoremap("<leader>gs", ":G<cr>")
 nnoremap("<leader>gc", ":G commit<cr>")
-nnoremap("<leader>gh", ":G push<cr>")
-nnoremap("<leader>gl", ":G pull<cr>")
+nnoremap("<leader>gk", ":G push<cr>")
+nnoremap("<leader>gj", ":G pull<cr>")
 nnoremap("<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
+nnoremap("<leader>gp", 'yiw:G cherry-pick <C-r>"<cr>')
+nnoremap("<leader>gl", ":G log<cr>")
+nnoremap("<leader>gt", ":G stash<cr>")
 
 -- Luasnip
 vim.keymap.set('i', '<Tab>', function()

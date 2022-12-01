@@ -36,6 +36,12 @@ return require('packer').startup(function(use)
     use "rafamadriz/friendly-snippets"
     use 'mfussenegger/nvim-dap'
     use "windwp/nvim-autopairs"
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {}
+      end
+    }
 
     -- My forks
     use "bandif/vim-fugitive"
