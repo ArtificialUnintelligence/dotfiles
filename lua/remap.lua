@@ -6,7 +6,7 @@ local vnoremap = require("keymap").vnoremap
 local imap = require("keymap").imap
 
 nnoremap("J", "mzJ`z")
-nnoremap("zz", ":update<Cr>")
+nnoremap("zz", ":up<Cr>")
 
 inoremap("<C-c>","<esc>")
 nnoremap("<C-c>", "<silent> <C-c>")
@@ -15,6 +15,8 @@ nnoremap("<C-u>", "<C-u>zz")
 inoremap("<C-v>", "<C-r><C-p>*")
 nnoremap("<leader>w", "<C-^>")
 nnoremap("Y", "y$")
+-- Deletes all buffers but the current one
+nnoremap("<leader>bd", ":up <bar> %bd <bar> e# <bar> bd# <Cr><Cr>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files{ path_display = { 'tail' } }<cr>")
@@ -22,17 +24,19 @@ nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers{ path_disp
 nnoremap("<leader>fe", "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>")
 nnoremap("<leader>lg", "<cmd>lua require('telescope.builtin').live_grep{ path_display = { 'tail' }, disable_coordinates = true }<cr>")
 nnoremap("<leader>ht", "<cmd>:Telescope help_tags<cr>")
-
+j
+-- Git remaps
 nnoremap("<leader>gs", ":G<cr>")
 nnoremap("<leader>gc", ":G commit<cr>")
 nnoremap("<leader>gk", ":G push<cr>")
 nnoremap("<leader>gj", ":G pull<cr>")
 nnoremap("<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
-nnoremap("<leader>gp", 'yiw:G cherry-pick <C-r>"<cr>')
 nnoremap("<leader>gl", ":G log<cr>")
 nnoremap("<leader>gt", ":G stash<cr>")
+nnoremap("<leader>gx", ':G reset --hard<cr>')
+nnoremap("<leader>gp", 'yiw:G cherry-pick <C-r>"<cr>')
 nnoremap("<leader>gr", 'yiw:G reset --soft <C-r>"<cr>')
-nnoremap("<leader>gx", 'yiw:G reset --hard<cr>')
+nnoremap("<leader>gu", 'yiw:G revert <C-r>"<cr>')
 
 -- Luasnip
 vim.keymap.set('i', '<Tab>', function()
