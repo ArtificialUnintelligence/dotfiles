@@ -31,6 +31,8 @@ nnoremap("<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<cr>
 nnoremap("<leader>gp", 'yiw:G cherry-pick <C-r>"<cr>')
 nnoremap("<leader>gl", ":G log<cr>")
 nnoremap("<leader>gt", ":G stash<cr>")
+nnoremap("<leader>gr", 'yiw:G reset --soft <C-r>"<cr>')
+nnoremap("<leader>gx", 'yiw:G reset --hard<cr>')
 
 -- Luasnip
 vim.keymap.set('i', '<Tab>', function()
