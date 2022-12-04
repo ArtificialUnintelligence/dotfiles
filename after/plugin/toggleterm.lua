@@ -1,4 +1,10 @@
+
 require("toggleterm").setup{
     insert_mappings = false,
-    open_mapping = [[<leader>t]]
+    terminal_mappings = false,
+    autochdir = true,
+    shell = "bash",
+    open_mapping = [[<leader>tt]]
+
+
 }

@@ -177,7 +177,7 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\FeketeA\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
+    url = "https://github.com/bandif/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,

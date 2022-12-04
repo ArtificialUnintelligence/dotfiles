@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
     use "rebelot/kanagawa.nvim"
 
     -- telescope
-    use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
 
@@ -46,4 +45,5 @@ return require('packer').startup(function(use)
     -- My forks
     use "bandif/vim-fugitive"
     use "bandif/nvim-dap-ui"
+    use "bandif/telescope.nvim"
 end)

@@ -40,3 +40,4 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 vim.opt.showmode = false
 vim.opt.foldcolumn = '1'
+vim.opt.clipboard = "unnamed"
