@@ -2,8 +2,8 @@ local wk = require("which-key")
 
 wk.register({
   ["<leader>w"] = "jump to last buffer",
-  ["<leader>d"] = "delete buffer",
-  ["<leader>bd"] = "delete other buffers",
+  ["<leader>bd"] = "delete buffer",
+  ["<leader>bx"] = "delete other buffers",
   -- Telescope remaps
   ["<leader>fb"] = "browse open buffers",
   ["<leader>fe"] = "file explorer",

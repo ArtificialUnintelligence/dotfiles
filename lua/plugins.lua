@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     }
 
     -- color-scheme
-    use "rebelot/kanagawa.nvim"
+    use 'rebelot/kanagawa.nvim'
 
     -- telescope
     use "nvim-telescope/telescope-file-browser.nvim"

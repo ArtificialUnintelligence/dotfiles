@@ -13,10 +13,10 @@ nnoremap("<C-c>", "<silent> <C-c>")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<leader>w", "<C-^>")
-nnoremap("<leader>d", ":bd<cr>")
+nnoremap("<leader>bd", ":bd<cr>")
 nnoremap("Y", "y$")
 -- Deletes all buffers but the current one
-nnoremap("<leader>bd", ":up <bar> %bd <bar> e# <bar> bd# <Cr><Cr>")
+nnoremap("<leader>bx", ":up <bar> %bd <bar> e# <bar> bd# <Cr><Cr>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files{ path_display = { 'tail' } }<cr>")
