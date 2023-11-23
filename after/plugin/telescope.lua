@@ -20,6 +20,7 @@ require("telescope").setup({
           theme = "ivy",
           -- disables netrw and use telescope-file-browser in its place
           hijack_netrw = true,
+          follow_symlinks = true,
           mappings = {
             ["i"] = {
                 ["<C-a>"] = fb_actions.change_cwd,
