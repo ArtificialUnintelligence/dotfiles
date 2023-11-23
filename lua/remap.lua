@@ -39,8 +39,10 @@ nnoremap("<leader>cr", 'yiw:G reset --soft <C-r>"<cr>')
 nnoremap("<leader>cu", 'yiw:G revert <C-r>"<cr>')
 
 -- Luasnip
-vim.keymap.set('i', '<Tab>', function()
-    return require('luasnip').expand_or_jumpable() == 1 and "<Plug>luasnip-expand-or-jump" or "<Tab>" end, { silent = true, expr = true})
+    vim.keymap.set({'i'}, '<Tab>', function()
+  local ls = require('luasnip')
+  return require('luasnip').expand_or_jumpable() and ls.expand_or_jump() or '<Tab>'
+end, {expr=true, remap = true})
 inoremap("<S-Tab>", "<cmd>lua require'luasnip'.jump(-1)<Cr>")
 snoremap("<Tab>", "<cmd>lua require'luasnip'.jump(1)<Cr>")
 snoremap("<S-Tab>", "<cmd>lua require'luasnip'.jump(-1)<Cr>")

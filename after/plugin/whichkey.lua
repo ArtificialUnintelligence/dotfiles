@@ -9,7 +9,6 @@ wk.register({
   ["<leader>fe"] = "file explorer",
   ["<leader>lg"] = "live grep",
   ["<leader>ht"] = "help tags",
-  ["<leader>tt"] = "toggle terminal",
   -- Git remaps
   ["<leader>gs"] = "git status",
   ["<leader>gj"] = "git pull",
